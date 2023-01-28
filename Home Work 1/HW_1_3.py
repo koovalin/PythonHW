@@ -11,8 +11,6 @@ def is_lucky(num):
         return print("Invalid")
     a = sum_all(int(str(num)[3::]))
     b = sum_all(int(str(num)[:3:]))
-    # print(a)
-    # print(b)
     if a == b:
         return print("Число счастливое!")
     return print("Число не счастливое!")
