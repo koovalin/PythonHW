@@ -8,15 +8,15 @@ my_list = [RAND(1, 100) for _ in range(list_range)]
 if find_number in my_list:
     print(f"Число {find_number} было найдено {my_list.count(find_number)} раз(а)!")
 else:
-    close_number = -1
+    closest_number = -1
     while True:
         lower_number = higher_number = find_number
         lower_number -= 1
         higher_number += 1
         if lower_number in my_list:
-            close_number = lower_number
+            closest_number = lower_number
             break
         if higher_number in my_list:
-            close_number = higher_number
+            closest_number = higher_number
             break
-    print(f"Числа {find_number} нет в списке. Ближайшее число {close_number} ")
+    print(f"Числа {find_number} нет в списке. Ближайшее число {closest_number} ")
