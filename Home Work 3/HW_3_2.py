@@ -14,4 +14,4 @@ for letter in word.upper():
     for key in points:
         if letter in points[key]:
             cost += int(key)
-print(cost)
+print(f"Стоимость слова = {cost}")
