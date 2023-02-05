@@ -15,5 +15,3 @@ for letter in word.upper():
         if letter in points[key]:
             cost += int(key)
 print(cost)
-
-
