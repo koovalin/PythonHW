@@ -1,7 +1,7 @@
 n = int(input("Максимальное число степени двойки: "))
+my_list = []
 x = 0
-list_ = []
 while 2 ** x < n:
-    list_.append(2 ** x)
+    my_list.append(2**x)
     x += 1
-print(*list_, sep=",")
+print(*my_list, sep=", ")
