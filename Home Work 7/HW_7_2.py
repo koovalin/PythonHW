@@ -6,16 +6,15 @@
 def print_operation_table(operation, num_rows: int = 6, num_columns: int = 6) -> print:
     matrix = [[0] * num_columns for _ in range(num_rows)]
     for row in range(num_rows):
-        matrix[row][0] = row + 1
-    for col in range(num_columns):
-        matrix[0][col] = col + 1
-
-    for row in range(1, num_rows):
-        for col in range(1, num_columns):
-            matrix[row][col] = operation(matrix[row][0], matrix[0][col])
-
+        for col in range(num_columns):
+            if row == 0:
+                matrix[row][col] = col+1
+            elif col == 0:
+                matrix[row][col] = row+1
+            else:
+                matrix[row][col] = operation(row+1, col+1)
     for line in matrix:
-        print(*(f'{i:<4}' for i in line), sep='')
+        print(*(f'{i:<5}' for i in line), sep='')
 
 
 print_operation_table(lambda x, y: x*y)
