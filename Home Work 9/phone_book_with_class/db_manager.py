@@ -7,14 +7,14 @@ class Manager:
     Менеджер контактов
     """
 
-    path = 'phone_db.txt'
-    phone_book = []
-    new_phone_book = []
-    flag = False
+
 
     def __init__(self):
-        if not os.path.exists(Manager.path):
-            with open(Manager.path, 'w') as f:
+        self.path = 'phone_db.txt'
+        self.phone_book = []
+        self.new_phone_book = []
+        if not os.path.exists(self.path):
+            with open(self.path, 'w') as f:
                 f.write('')
 
     def open_file(self):
@@ -25,7 +25,6 @@ class Manager:
                 new_contact = {'name': new[0], 'phone': new[1], 'comment': new[2]}
                 self.phone_book.append(new_contact)
             print('=====[Файл загружен]=====')
-            self.flag = True
         self.new_phone_book = deepcopy(self.phone_book)
 
     def get(self):
@@ -67,9 +66,3 @@ class Manager:
             return True
         else:
             return False
-
-    def check_file_open(self):
-        if not self.flag:
-            return False
-        else:
-            return True

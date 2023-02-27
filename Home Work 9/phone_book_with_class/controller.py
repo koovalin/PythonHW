@@ -6,7 +6,7 @@ def start():
     data = Manager()
     view = View()
     phone_book = data.get()
-    flag = data.check_file_open()
+    flag = False
 
     while True:
         choice = view.menu(flag)
@@ -14,6 +14,7 @@ def start():
         match choice:
             case 1:
                 data.open_file()
+                flag = True
             case 2:
                 data.save_file()
             case 3:
